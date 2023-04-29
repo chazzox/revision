@@ -1,0 +1,42 @@
+---
+import Layout from "../../components/layout.astro";
+import { getCollection, CollectionEntry } from "astro:content";
+
+export async function getStaticPaths() {
+    const information = await getCollection("moduleInformation");
+
+    const paths = Promise.all(
+        information.map(async (information) => ({
+            params: {
+                moduleId: information.slug
+            },
+            props: {
+                information,
+                lectures: await getCollection("moduleCollection", ({ id }) =>
+                    id.startsWith(information.slug)
+                )
+            }
+        }))
+    );
+
+    console.log("paths", paths);
+
+    return paths;
+}
+
+type Props = {
+    information: CollectionEntry<"moduleInformation">;
+    lectures: CollectionEntry<"moduleCollection">[];
+};
+const props = Astro.props;
+---
+
+<Layout>
+    {JSON.stringify(props)}
+    <div>
+        <h1>lectures</h1>
+        <div>
+            {props.lectures.map((v) => <a href={`/${v.slug}`}>{v.data.title}</a>)}
+        </div>
+    </div>
+</Layout>

@@ -1,0 +1,33 @@
+---
+import Layout from "../../components/layout.astro";
+import { CollectionEntry, getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+    const docs = await getCollection("moduleCollection");
+
+    const paths = docs.map((module) => {
+        const [moduleId, lectureId] = module.slug.split("/");
+        return {
+            params: { moduleId, lectureId },
+            props: module
+        };
+    });
+
+    return paths;
+}
+
+type Props = CollectionEntry<"moduleCollection">;
+
+const props = Astro.props;
+const params = Astro.params;
+
+console.log(props);
+console.log(params);
+
+const { Content, headings } = await props.render();
+---
+
+<Layout>
+    {JSON.stringify(headings)}
+    <Content />
+</Layout>

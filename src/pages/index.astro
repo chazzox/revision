@@ -1,0 +1,27 @@
+---
+import { get } from "http";
+import Layout from "../components/layout.astro";
+
+import { getCollection } from "astro:content";
+
+const modules = await getCollection("moduleInformation");
+
+console.log(modules);
+---
+
+<Layout>
+    {
+        modules.map(({ data: info }) => (
+            <a href={info.url}>
+                <div>{info.code}</div>
+                <div>{info.name}</div>
+                <div>{info.description}</div>
+                <div>
+                    {info.lectures.map((t) => (
+                        <li>{t}</li>
+                    ))}
+                </div>
+            </a>
+        ))
+    }
+</Layout>

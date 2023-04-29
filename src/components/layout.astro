@@ -1,0 +1,24 @@
+---
+import Navbar from "./navbar.astro";
+import "../styles/index.css";
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="synthwave">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Year 2 panic revision</title>
+    </head>
+    <body>
+        <div
+            class="flex min-h-screen flex-col bg-gradient-to-br from-primary to-accent text-primary-content"
+        >
+            <Navbar />
+            <div class="flex-1">
+                <slot />
+            </div>
+        </div>
+    </body>
+</html>
