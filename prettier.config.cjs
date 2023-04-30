@@ -9,7 +9,7 @@ module.exports = {
     proseWrap: "always",
     printWidth: 85,
     plugins: [
-        require("prettier-plugin-svelte"),
+        // require("prettier-plugin-svelte"),
         require("prettier-plugin-astro"),
         require("prettier-plugin-tailwindcss")
     ],
@@ -18,12 +18,6 @@ module.exports = {
             files: "*.astro",
             options: {
                 parser: "astro"
-            }
-        },
-        {
-            files: "*.svelte",
-            options: {
-                parser: "svelte"
             }
         }
     ]

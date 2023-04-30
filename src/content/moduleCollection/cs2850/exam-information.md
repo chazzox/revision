@@ -1,6 +1,6 @@
 ---
 title: "CS 2850 Test"
-description: "algo"
+description: "os"
 ---
 
 # this is a test for a collection :)

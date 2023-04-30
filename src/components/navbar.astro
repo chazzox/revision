@@ -1,3 +1,20 @@
-<div class="navbar bg-base-200 text-base-content">
-    <a href="/" class="btn-ghost btn text-xl normal-case">Revision Bollocks</a>
+---
+import SearchBar from "./search.svelte";
+const params = Astro.params;
+---
+
+<div class="navbar bg-base-200 pr-10 text-base-content">
+    <a href="/" class="btn btn-ghost text-xl normal-case">Revision Bollocks</a>
+    <SearchBar />
+    <div class="breadcrumbs ml-auto text-sm">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>
+                <a href={`/${params?.moduleId || ""}`}
+                    >{params?.moduleId || "No module selected"}</a
+                >
+            </li>
+            {params?.moduleId && <li>{params?.lectureId || "No page selected"}</li>}
+        </ul>
+    </div>
 </div>

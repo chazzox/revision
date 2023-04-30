@@ -19,8 +19,6 @@ export async function getStaticPaths() {
         }))
     );
 
-    console.log("paths", paths);
-
     return paths;
 }
 
@@ -28,15 +26,69 @@ type Props = {
     information: CollectionEntry<"moduleInformation">;
     lectures: CollectionEntry<"moduleCollection">[];
 };
-const props = Astro.props;
+const { information, lectures } = Astro.props;
+
+function prettyUrl(value: string): string {
+    return value
+        .replace(/ /g, "-")
+        .replace(/@/g, "")
+        .replace(/\$/g, "")
+        .replace(/!/g, "")
+        .replace(/#/g, "")
+        .replace("https://", "")
+        .toLowerCase();
+}
 ---
 
 <Layout>
-    {JSON.stringify(props)}
-    <div>
-        <h1>lectures</h1>
-        <div>
-            {props.lectures.map((v) => <a href={`/${v.slug}`}>{v.data.title}</a>)}
-        </div>
-    </div>
+    <h1 class="mt-4 text-center text-lg font-semibold underline">
+        Module Information
+    </h1>
+
+    <ul class="flex list-inside list-disc flex-wrap justify-center gap-4 p-4">
+        <li>
+            <span class="font-semibold underline">Human Name:</span>
+            {information.data.name}
+        </li>
+        <li>
+            <span class="font-semibold underline">Module Code</span>
+            <span class="uppercase">{information.data.code}</span>
+        </li>
+        <li>
+            <span class="font-semibold underline">Description:</span>
+            {information.data.description}
+        </li>
+        <li>
+            <span class="font-semibold underline">Moodle URL:</span>
+            <a target="_blank" class="link" href={information.data.moodleURL}
+                >{prettyUrl(information.data.moodleURL)}</a
+            >
+        </li>
+    </ul>
+
+    <h1 class="mt-10 text-center text-lg font-semibold underline">Note thingy</h1>
+    {
+        lectures.length == 0 ? (
+            <p class="my-6 text-center text-lg">
+                Haven't done anything for this yet :)))
+            </p>
+        ) : (
+            <div class="flex flex-wrap p-10">
+                {lectures.map((v) => (
+                    <a
+                        class="rounded-box bg-accent block w-96 p-2 shadow-xl"
+                        href={`/${v.slug}`}
+                    >
+                        <p>
+                            <span class="underline">Title:</span> {v.data.title}
+                        </p>
+                        <p>
+                            <span class="underline">Description:</span>{" "}
+                            {v.data.description}
+                        </p>
+                    </a>
+                ))}
+            </div>
+        )
+    }
 </Layout>

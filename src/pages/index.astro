@@ -1,27 +1,37 @@
 ---
-import { get } from "http";
 import Layout from "../components/layout.astro";
 
 import { getCollection } from "astro:content";
 
 const modules = await getCollection("moduleInformation");
-
-console.log(modules);
 ---
 
 <Layout>
-    {
-        modules.map(({ data: info }) => (
-            <a href={info.url}>
-                <div>{info.code}</div>
-                <div>{info.name}</div>
-                <div>{info.description}</div>
-                <div>
-                    {info.lectures.map((t) => (
-                        <li>{t}</li>
-                    ))}
-                </div>
-            </a>
-        ))
-    }
+    <h1 class="text-warning-content text-center mt-4">
+        this could all be wrong and bad and terrible. <span class="underline"
+            >you have been warned.</span
+        >
+    </h1>
+    <div class="flex flex-col items-center">
+        {
+            modules.map(({ data: info }) => (
+                <a
+                    href={info.url}
+                    class="rounded-box bg-secondary my-4 block w-2/3 max-w-3xl p-3 shadow-xl"
+                >
+                    <h1>
+                        <span class="font-semibold">Module Code:</span>
+                        <span class="uppercase underline">{info.code}</span>
+                    </h1>
+                    <div>
+                        <span class="font-semibold">Human name:</span> {info.name}
+                    </div>
+                    <div>
+                        <span class="font-semibold">Module description:</span>{" "}
+                        {info.description}
+                    </div>
+                </a>
+            ))
+        }
+    </div>
 </Layout>
