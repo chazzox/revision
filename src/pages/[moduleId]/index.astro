@@ -26,6 +26,7 @@ type Props = {
     information: CollectionEntry<"moduleInformation">;
     lectures: CollectionEntry<"moduleCollection">[];
 };
+
 const { information, lectures } = Astro.props;
 
 function prettyUrl(value: string): string {
@@ -73,10 +74,10 @@ function prettyUrl(value: string): string {
                 Haven't done anything for this yet :)))
             </p>
         ) : (
-            <div class="flex flex-wrap p-10">
+            <div class="mx-auto flex max-w-[95rem] flex-wrap gap-4 p-10">
                 {lectures.map((v) => (
                     <a
-                        class="rounded-box bg-accent block w-96 p-2 shadow-xl"
+                        class="rounded-box bg-accent block max-w-lg p-2 shadow-xl"
                         href={`/${v.slug}`}
                     >
                         <p>
