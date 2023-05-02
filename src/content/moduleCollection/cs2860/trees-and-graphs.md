@@ -142,6 +142,11 @@ this will be covered later
 
 uses a fifo queue
 
+iterates over each depth level of the graph, starting at the root at working its way
+down,
+
+going left to right, the queue structure would there for read right to left.
+
 <iframe
     width="560"
     height="315" 
@@ -152,7 +157,11 @@ uses a fifo queue
     allowfullscreen
 ></iframe>
 
+Time complexity: $O(\lvert V \rvert + \lvert E \rvert)$
+
 #### DFS (depth first search)
+
+search's all of the subtrees going left to right.
 
 <iframe 
     width="560" 
@@ -164,16 +173,4 @@ uses a fifo queue
     allowfullscreen
 ></iframe>
 
-### bst
-
-#### traversing binary trees
-
-#### avl
-
-### heaps
-
-heaps are a type of tree that are used to implement priority queues
-
-#### min/max heaps
-
-#### fibonacci heaps
+Time complexity: $O(\lvert V \rvert + \lvert E \rvert)$
