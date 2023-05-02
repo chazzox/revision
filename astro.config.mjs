@@ -11,5 +11,9 @@ export default defineConfig({
         port: 3000
     },
     output: "static",
-    adapter: vercel()
+    adapter: vercel(),
+    markdown: {
+        remarkPlugins: ["remark-math"],
+        rehypePlugins: ["rehype-katex"]
+    }
 });

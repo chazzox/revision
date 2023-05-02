@@ -1,6 +1,7 @@
 ---
-title: "CS2860"
-description: "exam info"
+title: "Exam information"
+description: "question summary"
+order: 1
 ---
 
 ## Question one
@@ -10,7 +11,7 @@ understanding of big O notation
 
 ## Question two
 
--   In 2020 and 2021 this Question was focused on $C$ and $N_0$ values for a given
+-   In 2020 and 2021 this Question was focused on $ C $ and $N_0$ values for a given
     function (more big oh)
 -   in 2019 and 2021 this Question was focused on analyzing a function and
     determining its big oh
@@ -19,7 +20,8 @@ understanding of big O notation
 
 ## Question three
 
-quick sort implementation/ data structures/ general sorting algorithms
+sorting algo implementation / [data structures](./data-structures.md) /
+[general sorting algorithms](./sorting-algorithms.md)
 
 -   quick sort
 -   merge sort

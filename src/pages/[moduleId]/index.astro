@@ -39,6 +39,8 @@ function prettyUrl(value: string): string {
         .replace("https://", "")
         .toLowerCase();
 }
+
+const { Content: ModuleInfo } = await information.render();
 ---
 
 <Layout>
@@ -67,28 +69,34 @@ function prettyUrl(value: string): string {
         </li>
     </ul>
 
-    <h1 class="mt-10 text-center text-lg font-semibold underline">Note thingy</h1>
+    <div class="mx-auto w-fit">
+        <ModuleInfo />
+    </div>
+
+    <h1 class="mt-10 text-center text-lg font-semibold underline">Note thingies</h1>
     {
         lectures.length == 0 ? (
             <p class="my-6 text-center text-lg">
                 Haven't done anything for this yet :)))
             </p>
         ) : (
-            <div class="mx-auto flex max-w-[95rem] flex-wrap gap-4 p-10">
-                {lectures.map((v) => (
-                    <a
-                        class="rounded-box bg-accent block max-w-lg p-2 shadow-xl"
-                        href={`/${v.slug}`}
-                    >
-                        <p>
-                            <span class="underline">Title:</span> {v.data.title}
-                        </p>
-                        <p>
-                            <span class="underline">Description:</span>{" "}
-                            {v.data.description}
-                        </p>
-                    </a>
-                ))}
+            <div class="mx-auto flex max-w-[95rem] flex-col flex-wrap gap-4 p-10 md:flex-row">
+                {lectures
+                    .sort((a, b) => a.data.order - b.data.order)
+                    .map((v) => (
+                        <a
+                            class="rounded-box bg-accent block max-w-lg p-2 shadow-xl"
+                            href={`/${v.slug}`}
+                        >
+                            <p>
+                                <span class="underline">Title:</span> {v.data.title}
+                            </p>
+                            <p>
+                                <span class="underline">Description:</span>{" "}
+                                {v.data.description}
+                            </p>
+                        </a>
+                    ))}
             </div>
         )
     }

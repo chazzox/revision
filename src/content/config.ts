@@ -1,21 +1,26 @@
 import { z, defineCollection } from "astro:content";
 
+const note_schema = z.object({
+    title: z.string(),
+    description: z.string(),
+    order: z.number()
+});
+
+const module_schema = z.object({
+    name: z.string(),
+    code: z.string(),
+    url: z.string(),
+    moodleURL: z.string(),
+    description: z.string(),
+    lectures: z.array(z.string())
+});
+
 const moduleCollection = defineCollection({
-    schema: z.object({
-        title: z.string(),
-        description: z.string()
-    })
+    schema: note_schema
 });
 
 const moduleInformation = defineCollection({
-    schema: z.object({
-        name: z.string(),
-        code: z.string(),
-        url: z.string(),
-        moodleURL: z.string(),
-        description: z.string(),
-        lectures: z.array(z.string())
-    })
+    schema: module_schema
 });
 
 export const collections = {
