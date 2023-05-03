@@ -51,6 +51,7 @@ if there are multiple candidates for a given node to pick, you can pick any, as 
 as it does not create a cycle like mentioned previously
 
 <iframe 
+    class='w-full'
     width="560" 
     height="315" 
     src="https://www.youtube.com/embed/71UQH7Pr9kU"
@@ -84,6 +85,7 @@ and when using an adjacency matrix and a binary heap the time complexity is
 $O(V \log V + E \log E)$
 
 <iframe 
+    class='w-full'
     width="560"
     height="315" 
     src="https://www.youtube.com/embed/cplfcGZmX7I" 
@@ -118,6 +120,7 @@ smallest distance in our current list of node weights. unlike kruskals and prims
 do not need to worry about creating a cycle
 
 <iframe 
+    class='w-full'
     width="560"
     height="315" 
     src="https://www.youtube.com/embed/_lHSawdgXpI" 
@@ -148,6 +151,7 @@ down,
 going left to right, the queue structure would there for read right to left.
 
 <iframe
+    class='w-full'
     width="560"
     height="315" 
     src="https://www.youtube.com/embed/HZ5YTanv5QE" 
@@ -164,6 +168,7 @@ Time complexity: $O(\lvert V \rvert + \lvert E \rvert)$
 search's all of the subtrees going left to right.
 
 <iframe 
+    class='w-full'
     width="560" 
     height="315"
     src="https://www.youtube.com/embed/Urx87-NMm6c" 
