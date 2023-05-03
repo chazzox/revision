@@ -17,11 +17,11 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"moduleCollection">;
 const props = Astro.props;
 
-const { Content } = await props.render();
+const { Content, headings } = await props.render();
 ---
 
 <Layout>
-    <div class="prose mx-auto my-4 text-primary-content">
+    <div class="prose mx-auto my-4 max-w-3xl text-primary-content">
         <h1>{props.data.title}</h1>
         <Content />
     </div>

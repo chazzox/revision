@@ -25,7 +25,7 @@ this page
 -   Each connectivity component represents a set of vertices that are all reachable
     from each other, but not from any vertex in another component.
 -   It is not possible to add any more vertices or edges to the subgraph without
-    disconnecting it from the rest of the graph. I have no clue what this means ngl
+    disconnecting it from the rest of the graph.
 
 ![subgraph](/subgraph.jpg)
 
@@ -81,7 +81,7 @@ when using adjacency matrix the time complexity of prims is $O(v^2)$ where v is 
 number of vertices (paths)
 
 and when using an adjacency matrix and a binary heap the time complexity is
-$O(V \log V + E \log E )$
+$O(V \log V + E \log E)$
 
 <iframe 
     width="560"
