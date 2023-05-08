@@ -10,12 +10,23 @@ i didn't write any of this i stole it :)
 
 <ol>
     <li>
-        Traversals a. Tree Traversal, Breadth-first Search, Depth-first Search b. Graph
-        Traversal, Depth-first search, Search Graph c. Time and Space Complexity d. Define
-        “complete” and “optimal” e. Associate “complete” and “optimal” with breadth-first
-        search and depth-first search
+        Traversals 
+        <ol>
+            <li>Tree Traversal, Breadth-first Search, Depth-first Search</li>
+            <li>Graph Traversal, Depth-first search, Search Graph</li>
+            <li>Time and Space Complexity</li>
+            <li>Define “complete” and “optimal”</li>
+            <li>Associate “complete” and “optimal” with breadth-first
+        search and depth-first search</li>
+        </ol>
     </li>
-    <li>Adversarial Search a. What is it? b. MINIMAX application c. Alpha-Beta Pruning</li>
+    <li>Adversarial Search
+        <ol>
+            <li>What is it?</li>
+            <li>MINIMAX application</li>
+            <li>Alpha-Beta Pruning</li>
+        </ol>
+    </li>
     <li>
         Unification, knowledge representation, forward reasoning computation
         <ol>
@@ -58,9 +69,11 @@ i didn't write any of this i stole it :)
       </li> 
     <li>
         Unification, knowledge representation, forward reasoning. 
-        a. Unification of pair of atomic sentences in prolog 
-        b. Statements to definite clauses 
-        c. Forward reasoning
+    <ol>
+        <li>Unification of pair of atomic sentences in prolog </li>
+        <li>Statements to definite clauses </li>
+        <li>Forward reasoning</li>
+    </ol>
     </li>
     <li>
         Resolution and backward reasoning in normal logic programs with negation by
@@ -136,7 +149,7 @@ i didn't write any of this i stole it :)
     <li>
         Logical Models, Entailment, Inference Procedures
         <ol>
-            <li>Define a knowledge base, formal definition of entailment.<li>
+            <li>Define a knowledge base, formal definition of entailment.</li>
             <li>Entailment.
                 <ol>
                     <li>Express inference procedure deriving a statement from knowledge base.</li>
@@ -144,8 +157,8 @@ i didn't write any of this i stole it :)
                     <li>Define completeness.</li>
                     <li>Explain how Knowledge Bases are true in the world.</li>
                 </ol>
-            <li>
-            <li>Explain monotonic, formulate first-order entailment, express default reasoning.<li>
+            </li>
+            <li>Explain monotonic, formulate first-order entailment, express default reasoning.</li>
         </ol>
     </li>
     <li>Logical Inference, default reasoning
@@ -157,11 +170,9 @@ i didn't write any of this i stole it :)
     </li>
     <li>Logical learning and knowledge.
         <ol>
-            <li>Explain inductive learning through generic
-    logical schema</li>
+            <li>Explain inductive learning through generic logical schema</li>
             <li>Specialise inductive learning schema to define decision tree.</li>
-            <li>Explain entailment constraints and knowledge learning to support
-    knowledge-based inductive learning.</li>
+            <li>Explain entailment constraints and knowledge learning to support knowledge-based inductive learning.</li>
         </ol>
     </li>
 </ol>
