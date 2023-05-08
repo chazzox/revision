@@ -2,6 +2,7 @@
 import Layout from "../../components/layout.astro";
 import { getCollection, CollectionEntry } from "astro:content";
 
+// genereating the different module preview pages
 export async function getStaticPaths() {
     const information = await getCollection("moduleInformation");
 
