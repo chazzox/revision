@@ -1,6 +1,6 @@
 ---
 import Layout from "../../components/layout.astro";
-import { CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 
 // generating all of the lecture note pages
 export async function getStaticPaths() {
@@ -18,12 +18,12 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"moduleCollection">;
 const props = Astro.props;
 
-const { Content, headings } = await props.render();
+const { Content } = await props.render();
 ---
 
 <Layout>
     <div
-        class="prose mx-auto my-4 max-w-3xl p-6 text-primary-content [&>ol>li>ol]:!list-[lower-alpha] [&>ol>li>ol>li>ol]:!list-[lower-roman]"
+        class="prose mx-auto my-4 max-w-3xl p-6 text-primary-content [&>ol>li>ol>li>ol]:!list-[lower-roman] [&>ol>li>ol]:!list-[lower-alpha]"
     >
         <h1>{props.data.title}</h1>
         <Content />

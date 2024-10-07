@@ -8,11 +8,7 @@ module.exports = {
     trailingComma: "none",
     proseWrap: "always",
     printWidth: 85,
-    plugins: [
-        // require("prettier-plugin-svelte"),
-        require("prettier-plugin-astro"),
-        require("prettier-plugin-tailwindcss")
-    ],
+    plugins: ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
     overrides: [
         {
             files: "*.astro",

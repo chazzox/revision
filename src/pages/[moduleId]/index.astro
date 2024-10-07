@@ -1,6 +1,6 @@
 ---
 import Layout from "../../components/layout.astro";
-import { getCollection, CollectionEntry } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 
 // genereating the different module preview pages
 export async function getStaticPaths() {
@@ -9,12 +9,12 @@ export async function getStaticPaths() {
     const paths = Promise.all(
         information.map(async (information) => ({
             params: {
-                moduleId: information.slug
+                moduleId: information.id
             },
             props: {
                 information,
                 lectures: await getCollection("moduleCollection", ({ id }) =>
-                    id.startsWith(information.slug)
+                    id.startsWith(information.id)
                 )
             }
         }))
@@ -40,8 +40,6 @@ function prettyUrl(value: string): string {
         .replace("https://", "")
         .toLowerCase();
 }
-
-const { Content: ModuleInfo } = await information.render();
 ---
 
 <Layout>
@@ -70,10 +68,6 @@ const { Content: ModuleInfo } = await information.render();
         </li>
     </ul>
 
-    <div class="mx-auto w-fit">
-        <ModuleInfo />
-    </div>
-
     <h1 class="mt-10 text-center text-lg font-semibold underline">Note thingies</h1>
     {
         lectures.length == 0 ? (
@@ -86,7 +80,7 @@ const { Content: ModuleInfo } = await information.render();
                     .sort((a, b) => a.data.order - b.data.order)
                     .map((v) => (
                         <a
-                            class="rounded-box bg-accent block max-w-lg p-2 shadow-xl"
+                            class="block max-w-lg rounded-box bg-accent p-2 shadow-xl"
                             href={`/${v.slug}`}
                         >
                             <p>

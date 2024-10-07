@@ -20,7 +20,8 @@ const moduleCollection = defineCollection({
 });
 
 const moduleInformation = defineCollection({
-    schema: module_schema
+    schema: module_schema,
+    type: "data"
 });
 
 export const collections = {
